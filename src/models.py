@@ -21,6 +21,8 @@ class Follower(Base):
     id = Column(Integer, primary_key=True)
     user = relationship(User)
     user_id = Column(Integer, ForeignKey('user.id'), nullable=True)
+    user_to_id = Column(Integer, ForeignKey('user.to_id'), nullable= True)
+    user_from_id = Column(Integer, ForeignKey('user.from_id'), nullable=True)
 
 class Post(Base):
     __tablename__ = 'post'
